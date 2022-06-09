@@ -1,0 +1,57 @@
+.dashboard-box {
+    color: #fff;
+}
+.dashboard-box .total-point{
+    background: #3C5A9A;
+}
+.dashboard-box .onboarded-point{
+    background: #63C2DE;
+}
+.dashboard-box .extra-point{
+    background: #FEC106
+}
+.dashboard-box .deduct-point{
+    background: #D44837
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.header {
+width: 100%;
+background-color: #fff;
+}
+
+
+.table {
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.table tr:nth-child(1){
+    font-weight: bold;
+}
+
+
+.table span {
+    border-bottom: solid 1px #e2e2e2;
+    padding-bottom: 25px;
+    width: 100%;
+    display: block;
+}
+
+.table tr:last-child span {
+    border-bottom: 0;
+}
+
+.table td {
+    border: 0;
+}
+
+.icon-red {
+	color: #CC0000;
+}
+
+.icon-green {
+	color:#007E33;
+}

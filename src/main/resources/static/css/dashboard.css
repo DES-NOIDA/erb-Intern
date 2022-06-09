@@ -1,0 +1,57 @@
+.header {
+    width: 100%;
+    background-color: #fff;
+}
+
+.navbar-nav a i {
+    margin-right: 5px;
+}
+
+.left-part {
+    background-color: #005CBA;
+    color: #fff;
+    border-bottom: solid 1px #3C89D6;
+    height: 125px;
+}
+
+.dashboard-position-box {
+    background-color: #fff;
+    border: solid 1px #005CBA;
+    display: inline-block;
+    margin-right: 15px;
+    width: 241px;
+}
+
+.dashboard-position-box h3 {
+    color: #005CBA;
+}
+
+.position-bg{
+    color: #fff;
+    background: #005CBA;
+    font-size: 16px;
+    font-weight: bold;
+}
+.our-table {
+    background: #fff; width: 100%;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.our-table td {
+    border-bottom: solid 1px #e2e2e2;
+    padding: 10px 15px;
+}
+
+.our-table small {
+    color: #888;
+}
+.table {
+	background: #fff;
+	box-shadow: 0px 0px 10px #ccc;
+	border-radius: 5px;
+}
+.referral-btn i {
+	position: relative;
+	top: 2px;
+	font-weight: bold;
+}

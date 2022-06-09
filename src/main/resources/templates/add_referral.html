@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
+
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/css/bootstrap-icons.css}" rel="stylesheet" />
+    <link th:href="@{/css/common2.css}" rel="stylesheet" />
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet" />
+    <link th:href="@{/css/add-referral.css}" rel="stylesheet" />		
+
+<title>Employee Referral Leaderboard | Add Referral</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="header">
+				<nav class="navbar navbar-expand-lg p-0 m-0">
+					<div class="col">
+						<svg width="150px" id="Layer_1" data-name="Layer 1"
+							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194 78">
+                            <defs>
+                                <style>
+									.cls-1 {
+										fill: #2c286d;
+									}
+									
+									.cls-2 {
+										fill: #00b4dd;
+									}
+									</style>
+                            </defs>
+                            <path class="cls-1"
+								d="M191.5,34.42c0,3-.88,3.94-3.31,4.67a42.28,42.28,0,0,1-10.06,1.29,50.53,50.53,0,0,1-10.86-1V35.85h19.26V31.07H172.9c-4.1,0-5.62-1.13-5.62-5.13V23.85c0-3.15.93-4.1,3.49-4.76a45.11,45.11,0,0,1,9.56-1.1,53.07,53.07,0,0,1,10.87,1v3.52H172.25v4h13.63c4.1,0,5.62,1.11,5.62,5.11Z" />
+                            <path class="cls-1"
+								d="M158.66,39.37a61.19,61.19,0,0,1-11.9,1,62,62,0,0,1-12-1V19a61.54,61.54,0,0,1,11.93-1,60.73,60.73,0,0,1,11.85,1v3.63h-18v4.07h11.74v4.22H140.53v4.8h18.13Z" />
+                            <path class="cls-1"
+								d="M127.9,39.37a48.76,48.76,0,0,1-10.66,1,49.48,49.48,0,0,1-10.74-1V18.49h5.75v17H127.9Z" />
+                            <path class="cls-1"
+								d="M99.61,39.5a27.14,27.14,0,0,1-6.33.78L84.43,22.4h-.5L75.09,40.28a24.5,24.5,0,0,1-6-.78l11.2-21h8Z" />
+                            <path class="cls-2"
+								d="M87.93,34.16a3.73,3.73,0,1,1-3.74-3.72,3.74,3.74,0,0,1,3.74,3.72" />
+                            <path class="cls-1"
+								d="M62.14,39.52a22.51,22.51,0,0,1-5.75.76V31.16H42.11v9.12a22.51,22.51,0,0,1-5.75-.76V18.89a22.5,22.5,0,0,1,5.75-.75v8.8H56.39v-8.8a22.5,22.5,0,0,1,5.75.75Z" />
+                            <path class="cls-1"
+								d="M28.36,22.71H18.27v17.2H12.58V22.71H2.5V19a72.21,72.21,0,0,1,12.94-1,72.06,72.06,0,0,1,12.92,1Z" />
+                            <path class="cls-2"
+								d="M9.21,48A2.49,2.49,0,0,1,10,50.17c0,1.39-.41,2-1.44,2.23v0c1.22.15,1.66.87,1.66,2.29a2.47,2.47,0,0,1-.81,2.12,4.48,4.48,0,0,1-2.64.59c-1.5,0-2.79,0-3.86-.13-.13,0-.19-.06-.19-.18V47.75c0-.14,0-.17.19-.18,1-.09,2.22-.14,3.56-.14A4.58,4.58,0,0,1,9.21,48ZM4.76,49.18v2.53h1.3a3.38,3.38,0,0,0,1.54-.23,1.07,1.07,0,0,0,.41-1c0-1-.47-1.3-1.71-1.3Zm0,4v2.54H6.67c1.14,0,1.56-.29,1.56-1.22s-.47-1.32-1.54-1.32Z" />
+                            <path class="cls-2"
+								d="M17.63,50.23c.11,0,.17.07.17.19V57c0,.16,0,.18-.17.22a17.49,17.49,0,0,1-3.06.22c-1.29,0-1.94-.1-2.45-.56s-.63-1.18-.63-2.52V50.42c0-.12.07-.19.21-.19h1.5a.17.17,0,0,1,.18.19v3.46a5.27,5.27,0,0,0,.12,1.34c.15.51.39.59,1.26.59H15.9V50.42a.18.18,0,0,1,.2-.19Z" />
+                            <path class="cls-2"
+								d="M21.37,48.24a1,1,0,0,1-1.09,1,1,1,0,0,1-1.12-1c0-.65.4-1,1.12-1A1,1,0,0,1,21.37,48.24Zm-.35,2a.17.17,0,0,1,.19.19v6.75c0,.14-.06.2-.19.2H19.51c-.12,0-.19-.06-.19-.2V50.42a.17.17,0,0,1,.19-.19Z" />
+                            <path class="cls-2"
+								d="M24.44,47.5a.18.18,0,0,1,.19.2v9.47c0,.14-.07.2-.19.2H22.93c-.13,0-.19-.06-.19-.2V47.7c0-.13.06-.2.19-.2Z" />
+                            <path class="cls-2"
+								d="M32.12,47.5c.13,0,.19.07.19.21v9.17a.27.27,0,0,1-.26.31,17.09,17.09,0,0,1-2.81.25,3.57,3.57,0,0,1-2.65-.73,4.56,4.56,0,0,1-.65-2.89,5,5,0,0,1,.59-2.9,2.86,2.86,0,0,1,2.33-.75,12.66,12.66,0,0,1,1.57.08V47.71c0-.14.06-.21.19-.21Zm-1.69,4.31H29.28c-.62,0-1,.13-1.2.37a3.43,3.43,0,0,0-.25,1.62,3.6,3.6,0,0,0,.23,1.61c.16.27.54.4,1.14.4a7.54,7.54,0,0,0,1.23-.09Z" />
+                            <path class="cls-2"
+								d="M35.89,48.24a1,1,0,0,1-1.1,1,1,1,0,0,1-1.12-1c0-.65.41-1,1.12-1A1,1,0,0,1,35.89,48.24Zm-.36,2a.17.17,0,0,1,.19.19v6.75c0,.14-.06.2-.19.2H34c-.12,0-.19-.06-.19-.2V50.42a.17.17,0,0,1,.19-.19Z" />
+                            <path class="cls-2"
+								d="M42.92,50.73c.51.46.64,1.17.64,2.5v3.94c0,.14-.06.2-.2.2H41.85c-.12,0-.19-.06-.19-.2V53.71c0-1,0-1.36-.25-1.63S41,51.8,40.3,51.8H39.14v5.37c0,.14-.07.2-.19.2H37.43c-.13,0-.19-.06-.19-.2V50.58c0-.16.06-.17.19-.19a15.68,15.68,0,0,1,3-.22C41.76,50.17,42.43,50.27,42.92,50.73Z" />
+                            <path class="cls-2"
+								d="M51,50.41a.28.28,0,0,1,.26.32v6.49a3.62,3.62,0,0,1-.31,1.8c-.34.69-1.19,1-2.81,1a13.9,13.9,0,0,1-2.36-.18.19.19,0,0,1-.18-.2v-1a.17.17,0,0,1,.18-.19h2.2c1.1,0,1.39-.24,1.39-1.1V57.3a8.79,8.79,0,0,1-1.56.14,2.9,2.9,0,0,1-2.35-.77,5.22,5.22,0,0,1-.6-3,4.26,4.26,0,0,1,.67-2.82,3.67,3.67,0,0,1,2.66-.71A15.81,15.81,0,0,1,51,50.41ZM49.33,51.8H48.06c-.58,0-1,.13-1.12.4a3.64,3.64,0,0,0-.23,1.59A3.34,3.34,0,0,0,47,55.42c.17.24.58.37,1.22.37a7.13,7.13,0,0,0,1.14-.07Z" />
+                            <path class="cls-2"
+								d="M60.44,50.7a2,2,0,0,1,.65,1.66v4.41a.36.36,0,0,1-.28.4,13,13,0,0,1-2.89.27,4.24,4.24,0,0,1-2.17-.35c-.55-.3-.76-.88-.78-1.86a2,2,0,0,1,.63-1.66,3.56,3.56,0,0,1,2-.43h1.62v-.46c0-.59-.4-.88-1.2-.88H55.7c-.14,0-.18,0-.18-.19v-1c0-.14,0-.16.18-.2A12,12,0,0,1,58,50.17,4,4,0,0,1,60.44,50.7Zm-1.23,3.66H57.74c-.66,0-.89.21-.89.77s.27.78,1.08.78a4.78,4.78,0,0,0,1.28-.13Z" />
+                            <path class="cls-2"
+								d="M69.34,47.57a.22.22,0,0,1,.21.24v1.06c0,.14-.08.2-.22.2h-1c-.52,0-.71.09-.71.5v.68h1.56q.18,0,.15.21l-.19,1.07a.21.21,0,0,1-.22.18h-1.3v5.46c0,.14-.06.2-.19.2H65.91c-.12,0-.19-.06-.19-.2V51.71h-.83c-.14,0-.21-.06-.21-.19V50.44c0-.13.07-.19.21-.19h.83v-1a1.57,1.57,0,0,1,.7-1.51A3.05,3.05,0,0,1,68,47.44,6.85,6.85,0,0,1,69.34,47.57Z" />
+                            <path class="cls-2"
+								d="M76.31,50.23c.11,0,.17.07.17.19V57c0,.16,0,.18-.17.22a17.49,17.49,0,0,1-3.06.22c-1.29,0-1.94-.1-2.45-.56s-.63-1.18-.63-2.52V50.42c0-.12.07-.19.21-.19h1.5a.17.17,0,0,1,.18.19v3.46a5.27,5.27,0,0,0,.12,1.34c.15.51.39.59,1.26.59h1.15V50.42a.17.17,0,0,1,.19-.19Z" />
+                            <path class="cls-2"
+								d="M80.13,48.26c.14,0,.21,0,.21.19v1.82h1.17c.14,0,.22.07.22.19v1c0,.13-.08.19-.22.19H80.34v3.48c0,.53.17.66.75.66h.52c.14,0,.22.06.22.19v1.08a.22.22,0,0,1-.21.24,5.25,5.25,0,0,1-1.08.12,3.67,3.67,0,0,1-1.2-.12c-.6-.16-.84-.56-.89-1.53V51.67H77.7c-.14,0-.21-.06-.21-.19v-1c0-.12.07-.19.21-.19h.75V48.86a.2.2,0,0,1,.18-.21Z" />
+                            <path class="cls-2"
+								d="M88.93,50.23a.17.17,0,0,1,.18.19V57c0,.16,0,.18-.18.22a17.33,17.33,0,0,1-3.06.22c-1.29,0-1.94-.1-2.45-.56s-.62-1.18-.62-2.52V50.42c0-.12.06-.19.2-.19h1.51c.11,0,.17.07.17.19v3.46a5.27,5.27,0,0,0,.12,1.34c.15.51.39.59,1.26.59h1.15V50.42a.17.17,0,0,1,.19-.19Z" />
+                            <path class="cls-2"
+								d="M94.6,50.31c.14,0,.21.11.21.25v1c0,.13-.08.19-.22.19h-1.2c-.7,0-.89.13-.89.65v4.72c0,.14-.06.2-.19.2H90.79c-.13,0-.19-.06-.19-.2V52a1.83,1.83,0,0,1,.47-1.33,2.81,2.81,0,0,1,1.84-.47A8.05,8.05,0,0,1,94.6,50.31Z" />
+                            <path class="cls-2"
+								d="M101.22,50.88a4.56,4.56,0,0,1,.64,2.83v.4c0,.25-.09.34-.41.34h-4a1.56,1.56,0,0,0,.29,1.1,1.8,1.8,0,0,0,1.15.26h2.26a.17.17,0,0,1,.19.19v1a.19.19,0,0,1-.18.21,13.5,13.5,0,0,1-2.44.18,3.38,3.38,0,0,1-2.56-.73,4.67,4.67,0,0,1-.64-2.91,4.61,4.61,0,0,1,.64-2.9,3.34,3.34,0,0,1,2.56-.73A3.28,3.28,0,0,1,101.22,50.88Zm-3.79,2.34H100c0-1.11-.31-1.42-1.24-1.42S97.45,52.11,97.43,53.22Z" />
+                            <path class="cls-1"
+								d="M115,50.4c.14,0,.16,0,.15.2L114.05,56a2.67,2.67,0,0,1-.46,1.19,1.49,1.49,0,0,1-1,.25,1.63,1.63,0,0,1-1-.22,3.19,3.19,0,0,1-.44-1.22l-.83-3.57L109.42,56a3.15,3.15,0,0,1-.45,1.22,1.59,1.59,0,0,1-1,.22,1.53,1.53,0,0,1-1-.25,2.67,2.67,0,0,1-.46-1.19l-1.12-5.4c0-.16,0-.2.15-.2h.93c.07,0,.12.06.15.2l1,5.24c.1.42.15.49.34.49s.25,0,.35-.49l1.24-5c0-.14.08-.21.17-.21h1.08c.08,0,.14.07.17.21l1.24,5c.1.45.13.49.34.49s.25-.07.35-.49l1-5.24c0-.16.07-.2.17-.2Z" />
+                            <path class="cls-1"
+								d="M121.41,51A4.55,4.55,0,0,1,122,53.7v.37c0,.27-.09.36-.46.36h-4a2.64,2.64,0,0,0,.34,1.55,1.78,1.78,0,0,0,1.36.39h2.09a.17.17,0,0,1,.19.19v.56a.19.19,0,0,1-.18.2,15.63,15.63,0,0,1-2.13.12,3,3,0,0,1-2.35-.69,5,5,0,0,1-.56-2.86A5,5,0,0,1,116.8,51a4.22,4.22,0,0,1,4.61,0Zm-3.6.8a2.81,2.81,0,0,0-.34,1.62h3.3a3,3,0,0,0-.33-1.63,1.59,1.59,0,0,0-1.29-.39A1.72,1.72,0,0,0,117.81,51.81Z" />
+                            <path class="cls-1"
+								d="M131,50.45c.12,0,.18.09.18.22v.54c0,.13-.06.2-.19.2H129c-.75,0-1.22.15-1.43.47a4.33,4.33,0,0,0-.3,2,4.28,4.28,0,0,0,.3,2c.21.32.68.48,1.43.48H131a.17.17,0,0,1,.19.19v.55a.19.19,0,0,1-.18.21,13.9,13.9,0,0,1-1.94.12c-1.27,0-2-.16-2.41-.72s-.55-1.34-.55-2.83.11-2.27.55-2.83,1.14-.72,2.41-.72A14,14,0,0,1,131,50.45Z" />
+                            <path class="cls-1"
+								d="M137.58,52.34V56.8a.35.35,0,0,1-.25.36,9.25,9.25,0,0,1-2.83.28,3.34,3.34,0,0,1-1.9-.41,2,2,0,0,1-.56-1.65c0-1.46.73-2,2.26-2h2v-.86c0-.8-.47-1.14-1.66-1.14h-1.91c-.15,0-.19,0-.19-.2v-.52c0-.14,0-.16.18-.2a11.77,11.77,0,0,1,1.92-.15C136.68,50.34,137.58,51,137.58,52.34Zm-1.23,2.06h-2c-.72,0-1.07.26-1.07,1s.39,1,1.47,1a6.87,6.87,0,0,0,1.63-.15Z" />
+                            <path class="cls-1"
+								d="M143.56,50.42a1.82,1.82,0,0,1,.88.4c.51.41.63,1.12.63,2.5v3.86c0,.13-.07.19-.21.19H144a.17.17,0,0,1-.19-.19V53.42a4.17,4.17,0,0,0-.21-1.54.52.52,0,0,0-.31-.32,2.27,2.27,0,0,0-1.09-.15H140.5v5.77c0,.13-.07.19-.2.19h-.84a.17.17,0,0,1-.19-.19V50.74c0-.16.07-.18.19-.2a14.13,14.13,0,0,1,2.66-.2A9,9,0,0,1,143.56,50.42Z" />
+                            <path class="cls-1"
+								d="M154.76,52.34V56.8a.35.35,0,0,1-.24.36,9.29,9.29,0,0,1-2.83.28,3.34,3.34,0,0,1-1.9-.41,2,2,0,0,1-.56-1.65c0-1.46.73-2,2.26-2h2v-.86c0-.8-.47-1.14-1.66-1.14H150c-.15,0-.19,0-.19-.2v-.52c0-.14,0-.16.18-.2a11.77,11.77,0,0,1,1.92-.15C153.87,50.34,154.76,51,154.76,52.34Zm-1.22,2.06h-2c-.72,0-1.07.26-1.07,1s.38,1,1.47,1a6.93,6.93,0,0,0,1.63-.15Z" />
+                            <path class="cls-1"
+								d="M157.51,47.72a.17.17,0,0,1,.19.19v9.27a.17.17,0,0,1-.19.19h-.85a.17.17,0,0,1-.19-.19V47.91a.17.17,0,0,1,.19-.19Z" />
+                            <path class="cls-1"
+								d="M160.49,47.72a.17.17,0,0,1,.19.19v9.27a.17.17,0,0,1-.19.19h-.84a.17.17,0,0,1-.19-.19V47.91a.17.17,0,0,1,.19-.19Z" />
+                            <path class="cls-1"
+								d="M166.67,48.47c.14,0,.22,0,.22.17v1.77h1.34c.14,0,.2.07.2.19v.6c0,.13-.06.19-.2.19h-1.34v4.29c0,.56.15.69.83.69h.61c.14,0,.21.06.21.17v.62c0,.11-.07.18-.2.2a3,3,0,0,1-.71.08,3.68,3.68,0,0,1-1.08-.1c-.56-.15-.83-.49-.88-1.36V51.39H165a.17.17,0,0,1-.19-.19v-.6a.17.17,0,0,1,.19-.19h.72V48.88a.18.18,0,0,1,.16-.2Z" />
+                            <path class="cls-1"
+								d="M173.1,50.48a.21.21,0,0,1,.19.21v.54c0,.14-.06.19-.2.18H172c-.88,0-1.11.14-1.11.71v5.06a.17.17,0,0,1-.19.19h-.83a.17.17,0,0,1-.19-.19V51.83a1.45,1.45,0,0,1,.48-1.15,1.5,1.5,0,0,1,.51-.23,3.29,3.29,0,0,1,1-.11A5.06,5.06,0,0,1,173.1,50.48Z" />
+                            <path class="cls-1"
+								d="M179.91,50.4a.17.17,0,0,1,.19.19V57c0,.15-.06.17-.19.19a14.06,14.06,0,0,1-2.65.21,10.18,10.18,0,0,1-1.44-.08,1.75,1.75,0,0,1-.88-.41c-.51-.42-.64-1.13-.64-2.51V50.59c0-.13.08-.19.22-.19h.81a.17.17,0,0,1,.19.19v3.76c0,1,0,1.47.35,1.74s.55.28,1.26.28h1.75V50.59a.17.17,0,0,1,.19-.19Z" />
+                            <path class="cls-1"
+								d="M186.17,50.45a.19.19,0,0,1,.18.2v.55a.17.17,0,0,1-.19.19h-2.37c-.63,0-.94.22-.94.67v.16c0,.4.27.7.8.89l1.69.68a1.65,1.65,0,0,1,1.28,1.8v.14a1.46,1.46,0,0,1-.6,1.36,4.16,4.16,0,0,1-2,.35,19.46,19.46,0,0,1-2.33-.12c-.13,0-.19-.07-.19-.19v-.56a.17.17,0,0,1,.19-.19h2.36c1,0,1.33-.12,1.33-.66v-.16c0-.39-.17-.61-.73-.85L182.85,54a1.79,1.79,0,0,1-1.22-1.82v-.27a1.3,1.3,0,0,1,.79-1.33,4.69,4.69,0,0,1,1.8-.26A15.71,15.71,0,0,1,186.17,50.45Z" />
+                            <path class="cls-1"
+								d="M189.37,48.47c.14,0,.22,0,.22.17v1.77h1.34c.14,0,.2.07.2.19v.6c0,.13-.06.19-.2.19h-1.34v4.29c0,.56.15.69.83.69H191c.14,0,.2.06.2.17v.62c0,.11-.06.18-.19.2a3,3,0,0,1-.71.08,3.75,3.75,0,0,1-1.09-.1c-.56-.15-.83-.49-.88-1.36V51.39h-.71a.17.17,0,0,1-.19-.19v-.6a.17.17,0,0,1,.19-.19h.71V48.88a.18.18,0,0,1,.17-.2Z" />
+                        </svg>
+
+					</div>
+					<div class="col">
+						<ul class="navbar-nav mr-auto float-right">
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/dashboard}"><i class="bi bi-speedometer"></i>Dashboard</a>
+							</li>
+							<li class="nav-item dropdown active">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> <i class="bi bi-person-fill"></i>Referral</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" th:href="@{/referral/new}">Add Referral</a> 
+									<a class="dropdown-item" th:href="@{/referral/list}">View Referral</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> <i class="bi bi-person-fill"></i>Employee</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" th:href="@{/employee/new}">Add Employee</a> 
+									<a class="dropdown-item" th:href="@{/employee/list}">View Employee</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> <i class="bi bi-person-fill"></i>Admin Users</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" th:href="@{/user/new}">Add User</a> 
+									<a class="dropdown-item" th:href="@{/user/list}">View User</a>
+								</div>
+							</li>
+							<li class="nav-item left-border pr-0">
+								<form th:action="@{/logout}" method="post">
+									<button type="submit" class="btn bg-white">
+										LOGOUT <i class="bi bi-power"></i>
+									</button>
+								</form>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+ <div class="blue-heading-bg">
+        <div class="container-fluid p-3">
+           Add Referral 
+        </div>
+    </div>
+	
+	<div class="body-part-bg mt-3 mb-3">
+        <div class="container-fluid" >
+            <div class="row align-items-center">
+                <div class="col-9" >
+                    <div class="body-bg p-3">
+                        <b class="mb-2 d-block">Referee Details</b>
+                        
+                        <form th:action="@{/referral/list}" th:object="${referral}"
+						method="POST">
+                        <div class="row">
+	                        <div class="form-group mb-3" style="width:100%" >
+								<div class="col">
+									 <label> Referee Name-TGI <small style="color: red"> <b> * </b></small></label>
+									 <div>
+										<select th:field="*{referreeTGI}" class="form-control" required>
+											<option value=""> Select Employee Name - TGI </option>
+											<th:block th:each="emp:${list}">
+												<option
+													th:text="${emp.employeeName} + ' - ' + ${emp.employeeTGI} "
+													th:value="${emp.employeeTGI}" />
+											</th:block>
+										</select>
+									</div>
+								</div>
+							</div> 
+						</div>
+						
+                        <b class="mb-2 mt-3 d-block">Referral Details</b>
+                        
+                         
+                            <div class="col">
+                                <div class="form-group ">
+                                    <label > Candidate Id <small style="color: red">  <b> * </b></small></label>
+                                    <input type="text"
+								name="candidateId" th:field="*{candidateId}"
+								class="form-control" placeholder="Enter Referral Candidate Id"   pattern="^([A-Za-z]{4}[0-9]{1,25})"
+								oninvalid="this.setCustomValidity('Candidate Id should not  be blank or contain special characters .')"
+								onchange="try{setCustomValidity('')}catch(e){}"
+								oninput="setCustomValidity(' ')"  required/>
+								 </div>
+                                </div>
+                            
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group mb-3">
+                                    <label> Referral Name <small style="color: red">  <b> * </b> </small></label>
+                                    <input type="text"
+								name="referralName" th:field="*{referralName}"
+								class="form-control" placeholder="Enter Referral Name" pattern="^[a-zA-Z][a-zA-Z ]+[a-zA-Z]{1,30}"
+								oninvalid="this.setCustomValidity('Enter Valid Name.Name should not be blank or contain numbers/special characters .')"
+								onchange="try{setCustomValidity('')}catch(e){}"
+								oninput="setCustomValidity(' ')" required />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group mb-3">
+                                    <label> Referral TGI</label>
+                                  <input type="text"
+								name="referralTGI" th:field="*{referralTGI}"
+								class="form-control" placeholder="Enter Referral TGI/SGI" pattern="^([A-Za-z]{1}[0-9]{7})"
+								oninvalid="this.setCustomValidity('Referral TGI  should have 8 characters.TGI should start with T.TGI should not contain any special charcter')"
+								onchange="try{setCustomValidity('')}catch(e){}"
+								oninput="setCustomValidity(' ')"/>
+								 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group mb-3">
+                                    <label> Position Offered <small style="color: red"><b> * </b></small></label>
+                                  <input type="text"
+								name="positionOffered" th:field="*{positionOffered}"
+								class="form-control" placeholder="Position Offered" pattern="^[a-zA-Z0-9][a-zA-Z0-9 ]+[a-zA-Z0-9]{1,30}"
+								oninvalid="this.setCustomValidity('Position Offered should not be blank or contain any special character .')"
+								onchange="try{setCustomValidity('')}catch(e){}"
+								oninput="setCustomValidity(' ')" required />
+								</div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group mb-3">
+                                    <label>Date of Referral</label>
+                                     <input type="date"
+								name="date of referral" th:field="*{dateOfReferral}"
+								class="form-control" placeholder="Enter Date" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group mb-3">
+                                    <label>Probation Completion Date</label>
+                                    <input type="date"
+								name="date of probation" th:field="*{dateOfProbation}"
+								class="form-control" placeholder="Enter Date" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group mb-3">
+                                    <label>Date of Joining</label>
+                                    <input type="date"
+								name="date of joining" th:field="*{dateOfJoining}"
+								class="form-control" placeholder="Enter Date" />
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group mb-3">                              
+                                    <p> Diversity <small style="color: red">  <b> * </b> </small></p>                                 
+                                    <span> 
+                                    	<input id="diversity1" name="diversity" th:field="*{diversity}" type="radio" value="Yes" /> 
+                                    	<label for="diversity1">Yes</label>
+									</span> 
+									<span> 
+										<input id="diversity2" name="diversity" th:field="*{diversity}" type="radio" value="No" required/> 
+										<label for="diversity2">No</label>
+									</span>
+                                </div>
+                            </div>
+                            </div>
+
+                        <div class="row">
+                            <div class="col">
+                            <div class="text-center">
+                                <button type="submit" class="btn-app btn-app-full-width" >Add Referral</button>
+                            </div>
+                            </div>   
+                        </div>
+                        </form>
+                    </div>
+                </div>
+              <div class="col text-center">
+                    <h6>Add New Referral </h6>
+                    <i style="color: red">
+                    * - Required Fields <br>
+                    <!-- The Required Fields Are: <br> -->
+                    * Referee Name - TGI <br>
+                    * Candidate Id <br>
+                    * Referral Name <br>
+                    * Position Offered<br>
+                    * Diversity
+                    </i>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+		<div class="container-fluid text-center footer mb-3">
+			<hr/>
+			<small><b> ERB v1.0 </b> | <i>Designed & Developed by </i><b>MCS-DES</b></small>
+		</div>
+    
+    <script src="/js/jquery-3.5.1.js"></script>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+.referral-btn {
+    padding: 0px 10px 5px 10px;
+    color: #005CBA;
+}
+
+.referral-btn i {
+    position: relative;
+    top: 2px;
+    font-weight: bold;
+}
+
+.referral-btn small {
+    font-weight: bold;
+}
+
+.body-bg {
+    background: #fff;
+    border: solid 1px #E2E2E2;
+}

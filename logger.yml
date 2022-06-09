@@ -1,0 +1,57 @@
+Configuration:
+  status: debug
+
+  appenders:
+  
+    Console:
+      name: LogToConsole
+      PatternLayout:
+        Pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"
+    
+    RollingFile:
+    
+      - name: LogToServerAppender
+        fileName: /opt/gemalto/AppDeploy/logs/server.log
+        filePattern: "logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 10MB
+        DefaultRollOverStrategy:
+          max: 10   
+           
+      - name: LogToAuditAppender
+        fileName: /opt/gemalto/AppDeploy/logs/audit.log
+        filePattern: "logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 10MB
+        DefaultRollOverStrategy:
+          max: 10     
+
+  Loggers:
+    
+    logger:
+      - name: auditlog
+        level: info      
+        additivity: false
+        AppenderRef:
+           - ref: LogToAuditAppender
+           
+                 
+    logger:
+      - name: serverlog
+        level: debug      
+        additivity: false
+        AppenderRef:
+           - ref: LogToServerAppender
+                   
+#    logger:
+#      - name: consolelog
+#        level: info
+#        AppenderRef:
+#          - ref: LogToConsole
+        
